@@ -13,19 +13,33 @@ public class Word{
      */
     public static String scrambleWord(String word)
     {
-        if(word.equals(" ")|| word.equals("A")|| word.indexOf("A")=-1){
-                 return word;
-        }
+        String k = word;
         for(int i = 2;i<word.length();i+2){
             if(((word.substring(0,i)).indexOf("A")=-1）||((word.substring(0,i)).indexOf("A")！=-1)&&（！(word.substring(i,i+1)).equals("A")))){
-                  word = word;
+                  k = word;
             }
             else if(((word.substring(0,i)).indexOf("A")！=-1)&&！(word.substring(i,i+1)).equals("A"))
-                  word = word.substring(0,i-2)+ word.substring(i-1,i)+word.substring(i-2,i-1)+word.substring(i);
+                  k = word.substring(0,i-1)+ word.substring(i,i+1)+word.substring(i-1,i)+word.substring(i);
             }
            
-         return word;
-               
+         return k;
+        
+               //
+        String tmp = "";
+        for(int i = 0;i<word.length()-1);i++){
+            String a = word.substring(i,i+1);
+            String b = word.substring(i+1,i+2);
+            if(a.equals("A")&&!b.equals("A")){
+                tmp+=b+a;
+                i++;
+            }
+            else{
+                tmp+=a;
+                if(i==word.length()-2){
+                    tmp+=word.substring(i+1,i+2);
+                 }
+            }}
+        return tmp;
     }
     /** Modifies wordList by replacing each word with its scrambled
      *  version, removing any words that are unchanged as a result of scrambling.
@@ -39,14 +53,13 @@ public class Word{
      */
     public static void scrambleOrRemove(List<String> wordList){
         /* part (b) */
-        List<String> word =wordList;
         for(int i = 0;i<wordList.size;i++){
-            String a = ((wordList.get(i)).scrambleWord);
-            if(a = wordList.get(i)){
+            if(scramble(wordList.get(i).equals(wordList.get(i)){
                 word.remove(i);
+                i--;
             }
         }
-        return wordList;
+        
     }
 
     public static void main(String[] args)
