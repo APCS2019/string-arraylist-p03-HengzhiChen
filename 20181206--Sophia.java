@@ -26,7 +26,7 @@ public class Word{
         
                //
         String tmp = "";
-        for(int i = 0;i<word.length()-1);i++){
+        for(int i = 0;i<word.length()-1;i++){
             String a = word.substring(i,i+1);
             String b = word.substring(i+1,i+2);
             if(a.equals("A")&&!b.equals("A")){
